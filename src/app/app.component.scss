@@ -1,0 +1,89 @@
+.main {
+  display: flex;
+  width: 100vw;
+}
+
+.flag-button {
+  cursor: pointer;
+}
+
+.list-flags {
+  flex-basis: 50%;
+}
+
+p {
+  text-align: center;
+  word-break: break-all;
+}
+
+.show, .active {
+  box-sizing: border-box;
+
+  &.tag1 {
+    background-color: rgb(194, 189, 189);
+  }
+
+  &.tag2 {
+    background-color: rgb(248, 173, 173);
+  }
+
+  &.tag3 {
+    background-color: rgb(248, 225, 183);
+  }
+
+  &.tag4 {
+    background-color: rgb(147, 209, 245);
+  }
+}
+
+.show {
+  &.just-unclick {
+    background-color: transparent;
+  }
+}
+.active.show {
+  &.tag4.tag3 {
+    background-color: green;
+  }
+}
+
+
+/* .box:first-child {
+  background-color: black;
+} */
+
+/* .text-render .active:first-child {
+  
+} */
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 100px;
+  overflow-y: auto;
+  font-size: large;  
+
+  .text-render {
+
+    .active:has(+ span:not(.active)) {
+      border-top-right-radius: 0.3rem;
+      border-bottom-right-radius: 0.3rem;
+    }
+
+    :not(.active) + .active {
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+    }  
+
+    .show:has(+ span:not(.show)) {
+      border-top-right-radius: 0.3rem;
+      border-bottom-right-radius: 0.3rem;
+    }
+
+    :not(.show) + .show {
+      border-top-left-radius: 0.3rem;
+      border-bottom-left-radius: 0.3rem;
+    }
+  }
+}
